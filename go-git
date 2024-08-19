@@ -1,0 +1,11 @@
+#!/bin/sh
+export APP_NAME=go-git
+export EXECUTABLE_PATH=./build/go-git
+
+set -e
+(
+  cd "$(dirname "$0")" # Ensure compile steps are run within the repository directory
+  go build -buildvcs="false" -o ${EXECUTABLE_PATH} ./cmd
+)
+
+exec ${EXECUTABLE_PATH} "$@"
