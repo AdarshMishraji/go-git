@@ -56,7 +56,7 @@ func NewCommitTreeCommand() *CommitTreeCommand {
 
 func (c *CommitTreeCommand) Execute() {
 
-	var commitContentBuffer = strings.Builder
+	var commitContentBuffer strings.Builder
 
 	commitContentBuffer.WriteString("tree ")
 	commitContentBuffer.WriteString(c.treeSHA)
